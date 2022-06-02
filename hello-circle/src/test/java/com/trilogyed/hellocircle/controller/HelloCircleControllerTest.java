@@ -30,4 +30,13 @@ public class HelloCircleControllerTest {
 
     }
 
+    @Test
+    public void shouldReturn200AndGiveTheAnswersToLife() throws Exception {
+        mockMvc.perform(get("/hello"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string("This is a fail"));
+
+    }
+
 }
